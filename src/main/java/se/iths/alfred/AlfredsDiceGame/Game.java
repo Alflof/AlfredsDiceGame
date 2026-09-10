@@ -39,7 +39,7 @@ public class Game {
             } else {
                 IO.println("Both of you - It's a tie! You both scored " + player1.getScore() + ".");
             }
-            IO.println("(Debug: P1: " + player1.getScore() + ", P2: " + player2.getScore() + ")");
+            IO.println("(Debug: P1: " + player1.getScore() + "p, P2: " + player2.getScore() + "p)");
 
             //Starta om eller avsluta
             String playAgain = IO.readln("\nPress Enter to play again, or enter \"Q\" to quit. ");
