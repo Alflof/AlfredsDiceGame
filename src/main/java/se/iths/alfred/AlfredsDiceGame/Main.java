@@ -14,22 +14,22 @@ public class Main {
 
     static void main() {
         IO.println("\nWelcome to Alfred's Dice Game!");
-        IO.println("In this game, two players throw two dices each, and their total score determines the winner.");
+        IO.println("In this game, two players throw two dices each, and their total score determines the winner.\n");
 
         //Låt spelarna mata in sina namn, validera strängarna, och fånga IllegalArgumentException
         while (!validInput) {
             try {
                 if (player1FirstName == null) {
-                    player1FirstName = checkString(IO.readln("\nPlayer 1, enter your first name: "));
+                    player1FirstName = checkString(IO.readln("Player 1, enter your first name: "));
                 }
                 if (player1LastName == null) {
-                    player1LastName = checkString(IO.readln("\nPlayer 1, enter your last name: "));
+                    player1LastName = checkString(IO.readln("Player 1, enter your last name: "));
                 }
                 if (player2FirstName == null) {
-                    player2FirstName = checkString(IO.readln("\nPlayer 2, enter your first name: "));
+                    player2FirstName = checkString(IO.readln("Player 2, enter your first name: "));
                 }
                 if (player2LastName == null) {
-                    player2LastName = checkString(IO.readln("\nPlayer 2, enter your last name: "));
+                    player2LastName = checkString(IO.readln("Player 2, enter your last name: "));
                 }
                 //Avsluta loopen om alla Strings är godkända
                 validInput = true;
