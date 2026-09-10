@@ -1,3 +1,5 @@
+package se.iths.alfred.AlfredsDiceGame;
+
 public class Player {
 
     private String firstName;
@@ -10,21 +12,15 @@ public class Player {
         this.lastName = lastName;
     }
 
-    static void main() {
-    }
-
     public int getScore() {
         return score;
     }
 
-    public void addToScore(int score) {
-        //Uppdatera värdet för score här
-        //Plussa på parameterns värde till this.score
-        //Använd metoden varje gång en spelare slår tärningen
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 
-    public String getFullName() {
-        //Returnera hela namnet med strängkonkatenering
-        //Metoden ska returnera spelarens förnamn och efterenamn som en sträng
+    public void addToScore(int score) {
+        this.score += score;
     }
 }
