@@ -23,4 +23,8 @@ public class Player {
     public void addToScore(int score) {
         this.score += score;
     }
+
+    public void resetScore() {
+        score = 0;
+    }
 }

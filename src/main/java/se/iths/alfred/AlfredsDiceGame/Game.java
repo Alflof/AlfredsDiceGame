@@ -9,7 +9,6 @@ public class Game {
     public static void playGame(Player player1, Player player2) {
 
         while (keepRunning) {
-
             //Player 1 tärningskast
             IO.readln(player1.getFullName() + ", press Enter to throw your first dice.");
             diceRoll = dice.rollDice();
@@ -40,15 +39,17 @@ public class Game {
             } else {
                 IO.println("Both of you - It's a tie! You both scored " + player1.getScore() + ".");
             }
-            IO.println("(Debug: P1: " + player1.getScore() + " P2: " + player2.getScore() + ")");
+            IO.println("(Debug: P1: " + player1.getScore() + ", P2: " + player2.getScore() + ")");
 
             //Starta om eller avsluta
-            String playAgain = IO.readln("\nEnter \"Y\" to play again, or \"N\" to quit. ");
-            if (playAgain.equals("Y")) {
-                IO.println("Great! Let's see who wins this time.");
-            } else if (playAgain.equals("N")) {
-                IO.println("\nThanks for playing Alfred's Dice Game! Welcome back again anytime.");
+            String playAgain = IO.readln("\nPress Enter to play again, or enter \"Q\" to quit. ");
+            if (playAgain.equals("Q")) {
+                IO.println("Thank you for playing Alfred's Dice Game! Welcome back any time.");
                 keepRunning = false;
+            } else {
+                IO.println("\nGreat! Let's see who wins this time.");
+                player1.resetScore();
+                player2.resetScore();
             }
         }
 
