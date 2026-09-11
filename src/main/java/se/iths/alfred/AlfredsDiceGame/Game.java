@@ -7,25 +7,12 @@ public class Game {
     static int diceRoll;
 
     public static void playGame(Player player1, Player player2) {
-
         while (keepRunning) {
             //Player 1 tärningskast
-            IO.readln(player1.getFullName() + ", press Enter to throw your first dice.");
-            diceRoll = dice.rollDice();
-            player1.addToScore(diceRoll);
-            IO.readln("You rolled a " + diceRoll + "! Press Enter to throw your second dice.");
-            diceRoll = dice.rollDice();
-            player1.addToScore(diceRoll);
-            IO.println("You rolled a " + diceRoll + "!");
+            playTurn(player1);
 
             //Player 2 tärningskast
-            IO.readln("\n" + player2.getFullName() + ", press Enter to throw your first dice.");
-            diceRoll = dice.rollDice();
-            player2.addToScore(diceRoll);
-            IO.readln("You rolled a " + diceRoll + "! Press Enter to throw your second dice.");
-            diceRoll = dice.rollDice();
-            player2.addToScore(diceRoll);
-            IO.println("You rolled a " + diceRoll + "!");
+            playTurn(player2);
 
             //Poängredovisning
             IO.println("\nThe game is over, and the winner is...");
@@ -39,11 +26,10 @@ public class Game {
             } else {
                 IO.println("Both of you - It's a tie! You both scored " + player1.getScore() + ".");
             }
-            IO.println("(Debug: P1: " + player1.getScore() + "p, P2: " + player2.getScore() + "p)");
 
             //Starta om eller avsluta
             String playAgain = IO.readln("\nPress Enter to play again, or enter \"Q\" to quit. ");
-            if (playAgain.equals("Q")) {
+            if (playAgain.equals("Q") || playAgain.equals("q")) {
                 IO.println("Thank you for playing Alfred's Dice Game! Welcome back any time.");
                 keepRunning = false;
             } else {
@@ -55,5 +41,14 @@ public class Game {
 
     }
 
-
+    //Tärningskast i egen metod för bättre DRY
+    static void playTurn(Player player) {
+        IO.readln(player.getFullName() + ", press Enter to throw your first dice.");
+        diceRoll = dice.rollDice();
+        player.addToScore(diceRoll);
+        IO.readln("You rolled a " + diceRoll + "! Press Enter to throw your second dice.");
+        diceRoll = dice.rollDice();
+        player.addToScore(diceRoll);
+        IO.println("You rolled a " + diceRoll + "!");
+    }
 }
