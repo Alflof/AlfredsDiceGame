@@ -10,13 +10,11 @@ public class Game {
         while (keepRunning) {
             //Player 1 tärningskast
             playTurn(player1);
-
             //Player 2 tärningskast
             playTurn(player2);
 
             //Poängredovisning
             IO.println("\nThe game is over, and the winner is...");
-
             if (player1.getScore() > player2.getScore()) {
                 IO.println(player1.getFullName() + " with " + player1.getScore() + " points! Congratulations!");
                 IO.println(player2.getFullName() + ", your " + player2.getScore() + " points were just not enough this time.");
@@ -38,7 +36,6 @@ public class Game {
                 player2.resetScore();
             }
         }
-
     }
 
     //Tärningskast i egen metod för bättre DRY
