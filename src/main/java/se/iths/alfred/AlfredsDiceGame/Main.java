@@ -31,7 +31,7 @@ public class Main {
                 if (player2LastName == null) {
                     player2LastName = checkString(IO.readln("Player 2, enter your last name: "));
                 }
-                //Avsluta loopen alla strängar är !null
+                //Avsluta loopen om alla strängar är !null
                 validInput = true;
             } catch (IllegalArgumentException e) {
                 IO.println(e.getMessage());
