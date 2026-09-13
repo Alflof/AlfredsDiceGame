@@ -13,7 +13,7 @@ public class Main {
     static boolean validInput = false;
 
     static void main() {
-        IO.println("\nWelcome to Alfred's Dice Game!");
+        IO.println("\nWelcome to Alfred's Dice Game! Boop");
         IO.println("In this game, two players throw two dices each, and their total score determines the winner.\n");
 
         //Låt spelarna mata in sina namn, validera strängarna, och fånga IllegalArgumentException
