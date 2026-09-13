@@ -1,7 +1,6 @@
 package se.iths.alfred.AlfredsDiceGame;
 
-public class Main
-{
+public class Main {
 
     //Deklaration
     static Player player1;
@@ -13,36 +12,28 @@ public class Main
     static Game gameManager = new Game();
     static boolean validInput = false;
 
-    static void main()
-    {
+    static void main() {
         IO.println("\nWelcome to Alfred's Dice Game!");
         IO.println("In this game, two players throw two dices each, and their total score determines the winner.\n");
 
         //Låt spelarna mata in sina namn, validera strängarna, och fånga IllegalArgumentException
-        while (!validInput)
-        {
-            try
-            {
-                if (player1FirstName == null)
-                {
+        while (!validInput) {
+            try {
+                if (player1FirstName == null) {
                     player1FirstName = checkString(IO.readln("Player 1, enter your first name: "));
                 }
-                if (player1LastName == null)
-                {
+                if (player1LastName == null) {
                     player1LastName = checkString(IO.readln("Player 1, enter your last name: "));
                 }
-                if (player2FirstName == null)
-                {
+                if (player2FirstName == null) {
                     player2FirstName = checkString(IO.readln("Player 2, enter your first name: "));
                 }
-                if (player2LastName == null)
-                {
+                if (player2LastName == null) {
                     player2LastName = checkString(IO.readln("Player 2, enter your last name: "));
                 }
                 //Avsluta loopen alla strängar är !null
                 validInput = true;
-            } catch (IllegalArgumentException e)
-            {
+            } catch (IllegalArgumentException e) {
                 IO.println(e.getMessage());
             }
         }
@@ -57,13 +48,10 @@ public class Main
     }
 
     //Metod för att kolla om strängar är tomma
-    private static String checkString(String text) throws IllegalArgumentException
-    {
-        if (text.equals(""))
-        {
+    private static String checkString(String text) throws IllegalArgumentException {
+        if (text.equals("")) {
             throw new IllegalArgumentException("ERROR: The text field can't be empty. Please enter some text.");
-        } else
-        {
+        } else {
             return text;
         }
     }
