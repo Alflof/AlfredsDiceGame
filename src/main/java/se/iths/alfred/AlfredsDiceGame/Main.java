@@ -14,7 +14,7 @@ public class Main {
 
     static void main() {
         IO.println("\nWelcome to Alfred's Dice Game!");
-        IO.println("In this game, two players throw two dices each, and their total score determines the winner.\n");
+        IO.println("In this game, two players roll two dices each, and their total score determines the winner.\n");
 
         //Låt spelarna mata in sina namn, validera strängarna, och fånga IllegalArgumentException
         while (!validInput) {
@@ -50,7 +50,7 @@ public class Main {
     //Metod för att kolla om strängar är tomma
     private static String checkString(String text) throws IllegalArgumentException {
         if (text.equals("")) {
-            throw new IllegalArgumentException("ERROR: The text field can't be empty. Please enter some text.");
+            throw new IllegalArgumentException("ERROR: The text field can't be empty.");
         } else {
             return text;
         }
