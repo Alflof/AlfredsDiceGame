@@ -27,7 +27,7 @@ public class Game {
 
             //Starta om eller avsluta
             String playAgain = IO.readln("\nPress Enter to play again, or enter \"Q\" to quit. ");
-            if (playAgain.equals("Q") || playAgain.equals("q")) {
+            if (playAgain.equals("Q") || playAgain.equals("q")) { //försök equalsIgnoreCase istället för OR operator
                 IO.println("Thank you for playing Alfred's Dice Game! Welcome back any time.");
                 keepRunning = false;
             } else {
