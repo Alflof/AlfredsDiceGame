@@ -2,11 +2,11 @@ package se.iths.alfred.AlfredsDiceGame;
 
 public class Game {
 
-    static boolean keepRunning = true;
-    static Dice dice = new Dice();
-    static int diceRoll;
+    boolean keepRunning = true;
+    //static Dice dice = new Dice(); behövs inte längre, Dice och Game delar package och rollDice() är static
+    int diceRoll;
 
-    public static void playGame(Player player1, Player player2) {
+    public void playGame(Player player1, Player player2) {
         while (keepRunning) {
             //Player 1 tärningskast
             playTurn(player1);
@@ -39,12 +39,12 @@ public class Game {
     }
 
     //Tärningskast i egen metod för bättre DRY
-    static void playTurn(Player player) {
+    void playTurn(Player player) {
         IO.readln(player.getFullName() + ", press Enter to roll your first dice.");
-        diceRoll = dice.rollDice();
+        diceRoll = Dice.rollDice();
         player.addToScore(diceRoll);
         IO.readln("You rolled a " + diceRoll + "! Press Enter to roll your second dice.");
-        diceRoll = dice.rollDice();
+        diceRoll = Dice.rollDice();
         player.addToScore(diceRoll);
         IO.println("You rolled a " + diceRoll + "!");
     }
