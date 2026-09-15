@@ -40,10 +40,10 @@ public class Game {
 
     //Tärningskast i egen metod för bättre DRY
     void playTurn(Player player) {
-        IO.readln(player.getFullName() + ", press Enter to roll your first dice.");
+        IO.readln(player.getFullName() + ", press Enter to roll your first die.");
         diceRoll = Dice.rollDice();
         player.addToScore(diceRoll);
-        IO.readln("You rolled a " + diceRoll + "! Press Enter to roll your second dice.");
+        IO.readln("You rolled a " + diceRoll + "! Press Enter to roll your second die.");
         diceRoll = Dice.rollDice();
         player.addToScore(diceRoll);
         IO.println("You rolled a " + diceRoll + "!");

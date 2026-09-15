@@ -14,7 +14,7 @@ public class Main {
 
     static void main() {
         IO.println("\nWelcome to Alfred's Dice Game!");
-        IO.println("In this game, two players roll two dices each, and their total score determines the winner.\n");
+        IO.println("In this game, two players roll two dice each, and their total score determines the winner.\n");
 
         //Låt spelarna mata in sina namn, validera strängarna, och fånga IllegalArgumentException
         while (!validInput) {
