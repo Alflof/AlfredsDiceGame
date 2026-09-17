@@ -6,7 +6,6 @@ public class Player {
     private String lastName;
     private int score;
 
-    //Konstruktor
     public Player(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
