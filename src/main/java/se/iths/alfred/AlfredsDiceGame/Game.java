@@ -3,14 +3,11 @@ package se.iths.alfred.AlfredsDiceGame;
 public class Game {
 
     boolean keepRunning = true;
-    //static Dice dice = new Dice(); behövs inte längre, Dice och Game delar package och rollDice() är static
-    int diceRoll;
 
     public void playGame(Player player1, Player player2) {
         while (keepRunning) {
-            //Player 1 tärningskast
+
             playTurn(player1);
-            //Player 2 tärningskast
             playTurn(player2);
 
             //Poängredovisning
@@ -22,12 +19,12 @@ public class Game {
                 IO.println(player2.getFullName() + " with " + player2.getScore() + " points! Congratulations!");
                 IO.println(player1.getFullName() + ", your " + player1.getScore() + " points were just not enough this time.");
             } else {
-                IO.println("Both of you - It's a tie! You both scored " + player1.getScore() + ".");
+                IO.println("Neither of you - It's a tie! You both scored " + player1.getScore() + ".");
             }
 
             //Starta om eller avsluta
             String playAgain = IO.readln("\nPress Enter to play again, or enter \"Q\" to quit. ");
-            if (playAgain.equals("Q") || playAgain.equals("q")) { //försök equalsIgnoreCase istället för OR operator
+            if (playAgain.equalsIgnoreCase("Q")) {
                 IO.println("Thank you for playing Alfred's Dice Game! Welcome back any time.");
                 keepRunning = false;
             } else {
@@ -38,10 +35,9 @@ public class Game {
         }
     }
 
-    //Tärningskast i egen metod för bättre DRY
     void playTurn(Player player) {
         IO.readln(player.getFullName() + ", press Enter to roll your first die.");
-        diceRoll = Dice.rollDice();
+        int diceRoll = Dice.rollDice();
         player.addToScore(diceRoll);
         IO.readln("You rolled a " + diceRoll + "! Press Enter to roll your second die.");
         diceRoll = Dice.rollDice();
