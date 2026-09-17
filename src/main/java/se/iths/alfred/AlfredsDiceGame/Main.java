@@ -20,16 +20,16 @@ public class Main {
         while (!validInput) {
             try {
                 if (player1FirstName == null) {
-                    player1FirstName = checkString(IO.readln("Player 1, enter your first name: "));
+                    player1FirstName = validateString(IO.readln("Player 1, enter your first name: "));
                 }
                 if (player1LastName == null) {
-                    player1LastName = checkString(IO.readln("Player 1, enter your last name: "));
+                    player1LastName = validateString(IO.readln("Player 1, enter your last name: "));
                 }
                 if (player2FirstName == null) {
-                    player2FirstName = checkString(IO.readln("Player 2, enter your first name: "));
+                    player2FirstName = validateString(IO.readln("Player 2, enter your first name: "));
                 }
                 if (player2LastName == null) {
-                    player2LastName = checkString(IO.readln("Player 2, enter your last name: "));
+                    player2LastName = validateString(IO.readln("Player 2, enter your last name: "));
                 }
                 //Avsluta loopen om alla strängar är !null
                 validInput = true;
@@ -48,7 +48,7 @@ public class Main {
     }
 
     //Metod för att kolla om strängar är tomma
-    private static String checkString(String text) throws IllegalArgumentException {
+    private static String validateString(String text) throws IllegalArgumentException {
         if (text.equals("")) {
             throw new IllegalArgumentException("ERROR: The text field can't be empty.");
         } else {
